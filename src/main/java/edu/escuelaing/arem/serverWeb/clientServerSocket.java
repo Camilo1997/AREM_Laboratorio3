@@ -1,17 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package edu.escuelaing.arem.serverWeb;
+package edu.escuelaing.arem.httpServer;
 
-import static edu.escuelaing.arem.serverWeb.MainServer.getPort;
+import static edu.escuelaing.arem.httpServer.MainServer.getPort;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
  * This class creates the ClientSocket and ServerSocket
+ *
  * @author camilolopez
  */
 public final class clientServerSocket {

@@ -1,9 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package edu.escuelaing.arem.serverWeb;
+package edu.escuelaing.arem.httpServer;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -11,7 +6,12 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 
 /**
- * This class creates an HttpServer to open local pages
+ * Esta clase crea el in y el out del cliente del servidor,
+ * ademas llama la instacia para crear los sockets de cliente 
+ * y de servidor uno tras de otro, analisa el input que
+ * recibe el servidor desde el cliente y muestra en pantalla
+ * la solicitud que realza el cliente.
+ *
  * @author camilolopez
  */
 public class ServerHttp {
@@ -27,13 +27,13 @@ public class ServerHttp {
                 new InputStreamReader(
                         clientServerSocket.getClientSocket().getInputStream()));
 
-        String inputLine, outputLine, pagSelected = "";
+        String inputLine, outputLine, reqSelected = "";
 
         while ((inputLine = in.readLine()) != null) {
-            if (inputLine.equals("GET /dog.png HTTP/1.1")) {
-                pagSelected = "dog";
-            } else if (inputLine.equals("GET /index.html HTTP/1.1")) {
-                pagSelected = "index";
+            if(inputLine.contains("GET")){
+                if(!inputLine.contains("favicon.ico")){
+                    reqSelected = inputLine.split(" ")[1];
+                }
             }
             System.out.println("Received: " + inputLine);
             if (!in.ready()) {
@@ -41,14 +41,14 @@ public class ServerHttp {
             }
         }
         pagWeb pagWeb = new pagWeb(clientServerSocket.getClientSocket());
-        pagWeb.getPagWeb(pagSelected);
+        pagWeb.getPagWeb(reqSelected);
         out.println(pagWeb.getPagToReturn());
 
         in.close();
         out.close();
         clientServerSocket.getClientSocket().close();
         clientServerSocket.getServerSocket().close();
-                
+
     }
-    
+
 }

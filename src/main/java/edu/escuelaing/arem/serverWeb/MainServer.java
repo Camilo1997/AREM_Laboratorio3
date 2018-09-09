@@ -1,9 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package edu.escuelaing.arem.serverWeb;
+package edu.escuelaing.arem.httpServer;
 
 import java.io.IOException;
 
@@ -18,15 +13,16 @@ public class MainServer {
      * @throws java.io.IOException
      */
     public static void main(String[] args) throws IOException {
-                
-        ServerHttp server;        
-        while(true){
+
+        ServerHttp server;
+        while (true) {
             server = new ServerHttp();
         }
     }
-    
+
     /**
      * This method will set a default port to be open on Heroku
+     *
      * @return The default port
      */
     static int getPort() {
@@ -34,5 +30,5 @@ public class MainServer {
             return Integer.parseInt(System.getenv("PORT"));
         }
         return 35000;
-    }    
+    }
 }
