@@ -1,4 +1,4 @@
-package edu.escuelaing.arem;
+package edu.escuelaing.arem.URLReader;
 
 import edu.escuelaing.arem.URLReader.urlMethods;
 import java.io.*;
@@ -12,7 +12,7 @@ public class App {
 
     public static void main(String[] args) throws MalformedURLException, IOException {
 
-        //Browser x = new Browser();
-        urlMethods y = new urlMethods();                        
+        Browser x = new Browser();
+        //urlMethods y = new urlMethods();                        
     }
 }

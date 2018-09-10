@@ -1,4 +1,4 @@
-package edu.escuelaing.arem.httpServer;
+package edu.escuelaing.arem.serverWeb;
 
 import java.io.IOException;
 

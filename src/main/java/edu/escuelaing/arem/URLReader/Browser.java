@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.escuelaing.arem;
+package edu.escuelaing.arem.URLReader;
 
 import edu.escuelaing.arem.URLReader.urlReader;
 import java.io.FileNotFoundException;

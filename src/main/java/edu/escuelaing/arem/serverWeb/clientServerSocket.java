@@ -1,6 +1,6 @@
-package edu.escuelaing.arem.httpServer;
+package edu.escuelaing.arem.serverWeb;
 
-import static edu.escuelaing.arem.httpServer.MainServer.getPort;
+import static edu.escuelaing.arem.serverWeb.MainServer.getPort;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;

@@ -19,7 +19,7 @@ public class urlReader {
 
     public urlReader(String urlToUse) throws MalformedURLException, FileNotFoundException, UnsupportedEncodingException {
         URL google = new URL(urlToUse);
-        PrintWriter pw = new PrintWriter("urlWeb.html", "UTF-8");
+        PrintWriter pw = new PrintWriter("contentWeb.html", "UTF-8");
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(google.openStream()))) {
             String inputLine = null;
             while ((inputLine = reader.readLine()) != null) {
